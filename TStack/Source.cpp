@@ -22,7 +22,7 @@ int main()
 	DataType tmp;
 	cout << "enter: ";
 	cin >> tmp;
-	cout << st.isExist(tmp) << endl;
+	cout << boolalpha << st.isExist(tmp) << endl;
 
 	return 0;
 }
