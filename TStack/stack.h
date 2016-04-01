@@ -6,6 +6,8 @@ class TStack
 {
 public:
 	TStack(): start(0) {}
+	TStack(const DataType);
+	~TStack();
 
 	void push(const DataType);
 	DataType pop(void);

@@ -3,6 +3,21 @@
 
 using namespace std;
 
+TStack::TStack(const DataType data)
+{
+	start = create(data);
+}
+
+TStack::~TStack()
+{
+	while (start != 0)
+	{
+		NODE* temp = start->next;
+		del(start);
+		start = temp;
+	}
+}
+
 NODE* TStack::create(const DataType data)
 {
 	NODE* item = new NODE;
@@ -64,4 +79,5 @@ void TStack::print(void) const
 		cout << *temp->data << ' ';
 		temp = temp->next;
 	}
+	cout << endl;
 }

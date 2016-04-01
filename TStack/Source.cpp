@@ -10,17 +10,13 @@ int main()
 		st.push(i);
 
 	st.print();
-	cout << endl;
 
-	st.pop();
-	st.pop();
-	st.pop();
+	st.pop(); st.pop(); st.pop();
 
 	st.print();
-	cout << endl;
 
 	DataType tmp;
-	cout << "enter: ";
+	cout << "what do you want to find: ";
 	cin >> tmp;
 	cout << boolalpha << st.isExist(tmp) << endl;
 
