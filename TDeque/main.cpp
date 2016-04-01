@@ -14,5 +14,13 @@ int main()
 
 	q.print();
 
+	for (int i = 0; i < 5; i++)
+	{
+		q.pop_head();
+		q.pop_tail();
+	}
+
+	q.print();
+
 	return 0;
 }

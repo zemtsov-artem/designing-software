@@ -14,10 +14,14 @@ TDeque::~TDeque()
 	NODE* i = head;
 	NODE* j = tail;
 
-	for (i, j; i != j; i = i->next, j = j->prev) 
+	while (i != j)
 	{
-		del(i);
-		del(j);
+		NODE* temp_i = i->next;
+		NODE* temp_j = j->prev;
+
+		del(i); del(j);
+
+		i = temp_i; j = temp_j;
 	}
 
 	del(i);
@@ -48,6 +52,7 @@ void TDeque::push_head(const DataType data)
 	{
 		NODE* temp = create(data);
 		temp->next = head;
+		head->prev = temp;
 		head = temp;
 	}
 	else
@@ -64,6 +69,7 @@ void TDeque::push_tail(const DataType data)
 		NODE* temp = tail;
 		tail = create(data);
 		tail->prev = temp;
+		temp->next = tail;
 	}
 	else
 	{
@@ -77,10 +83,10 @@ DataType TDeque::pop_head(void)
 	if (!is_empty())
 	{
 		NODE* temp = head;
-		del(head);
 		head = temp->next;
 
 		DataType t_data = *temp->data;
+		del(temp);
 		return t_data;
 	}
 	else
@@ -92,10 +98,10 @@ DataType TDeque::pop_tail(void)
 	if (!is_empty())
 	{
 		NODE* temp = tail;
-		del(tail);
 		tail = temp->prev;
 
 		DataType t_data = *temp->data;
+		del(temp);
 		return t_data;
 	}
 	else
@@ -115,9 +121,13 @@ bool TDeque::is_exist(const DataType data) const
 	NODE* i = head;
 	NODE* j = tail;
 
-	for (i, j; i != j; i = i->next, j = j->prev)
+	while (i != j)
+	{
 		if ((*i->data == data) || (*j->data == data))
 			return true;
+
+		i = i->next; j = j->prev;
+	}
 
 	return false;
 }
