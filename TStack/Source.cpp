@@ -1,7 +1,11 @@
+#include <iostream>
 #include "stack.h"
 
-int main() {
-	Stack st;
+using namespace std;
+
+int main() 
+{
+	TStack st;
 	for (int i = 0; i < 10; i++)
 		st.push(i);
 
@@ -18,7 +22,7 @@ int main() {
 	DataType tmp;
 	cout << "enter: ";
 	cin >> tmp;
-	cout << st.isExist(tmp) << endl;
+	cout << boolalpha << st.isExist(tmp) << endl;
 
 	return 0;
 }
