@@ -99,6 +99,7 @@ DataType TDeque::pop_tail(void)
 	{
 		NODE* temp = tail;
 		tail = temp->prev;
+		tail->next = 0;
 
 		DataType t_data = *temp->data;
 		del(temp);
