@@ -62,9 +62,8 @@ void TDeque::push_tail(const DataType data)
 	if (!is_empty())
 	{
 		NODE* temp = tail;
-		tail->prev = tail;
 		tail = create(data);
-
+		tail->prev = temp;
 	}
 	else
 	{
