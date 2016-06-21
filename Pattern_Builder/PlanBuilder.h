@@ -1,26 +1,20 @@
-#include <iostream>
-#include <memory>
-#include <string>
+#pragma once
 
-class PlanBuilder
-{
-protected:
-    Plan* _plan;
-public:
+#include "Plan.h"
+
+class PlanBuilder {
+ public:
     PlanBuilder() { _plan = new Plan(); }
-    virtual ~PlanBuilder()
-    {
-        delete _plan;
-    }
-    //методы для стен
-    virtual void BuildWalls() = 0;
-    //методы для окон
+    virtual ~PlanBuilder() = default;
+
+    virtual void BuildWalls()   = 0;
     virtual void BuildWindows() = 0;
-    //методы для дверей
-    virtual void BuildDoors() = 0;
-    //Изображение схемы
-    void Draw()
-    {
+    virtual void BuildDoors()   = 0;
+
+    void Draw() {
         _plan->Draw();
     }
+
+ protected:
+    Plan* _plan;
 };
