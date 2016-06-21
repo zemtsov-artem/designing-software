@@ -21,7 +21,7 @@
 
 **Схема квартиры:**
 
-![apartment](../pictures/1.jpg)
+![apartment](./pictures/1.jpg)
 
 #### Структура файлов
 
