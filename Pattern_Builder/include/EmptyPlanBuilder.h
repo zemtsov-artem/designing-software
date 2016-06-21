@@ -3,7 +3,10 @@
 #include "PlanBuilder.h"
 
 class EmptyPlanBuilder : public PlanBuilder {
-	void buildWalls() {
+ public:
+    //EmptyPlanBuilder() : PlanBuilder() {}
+
+    virtual void BuildWalls() {
 		Wall wall_front(0,0,10,0);
 		Wall wall_back(10,0,10,10);
 		Wall wall_left(10,10,0,10);
@@ -15,7 +18,6 @@ class EmptyPlanBuilder : public PlanBuilder {
 		_plan->addWall(wall_rigth);
 	}
 
-	void buildDoors() {}
-
-	void buildWindows() {}
+	virtual void BuildDoors() {}
+	virtual void BuildWindows() {}
 };

@@ -11,6 +11,7 @@ class Point {
 	int Y;			
 };
 
+/*------------------------------------------------*/
 
 class Line {
  public:
@@ -31,6 +32,7 @@ class Line {
 	Point ToPoint;
 };
 
+/*------------------------------------------------*/
 
 class Wall: public Line {
  public: 
@@ -40,6 +42,7 @@ class Wall: public Line {
 	void Draw() { cout << "Wall "; Line::Draw(); }
 };
 
+/*------------------------------------------------*/
 
 class Door: public Line {
  public: 
@@ -49,6 +52,7 @@ class Door: public Line {
 	void Draw() { cout << "Door "; Line::Draw(); }
 };
 
+/*------------------------------------------------*/
 
 class Window: public Line {
  public: 
