@@ -5,8 +5,8 @@
 class Director {
  public: 
 	void Construct(PlanBuilder* builder) {
-		builder->buildWalls();
-		builder->buildDoors();
-		builder->buildWindows();
+		builder->BuildWalls();
+		builder->BuildDoors();
+		builder->BuildWindows();
 	}
 };
