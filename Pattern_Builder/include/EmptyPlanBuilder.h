@@ -4,8 +4,6 @@
 
 class EmptyPlanBuilder : public PlanBuilder {
  public:
-    //EmptyPlanBuilder() : PlanBuilder() {}
-
     virtual void BuildWalls() {
 		Wall wall_front(0,0,10,0);
 		Wall wall_back(10,0,10,10);
