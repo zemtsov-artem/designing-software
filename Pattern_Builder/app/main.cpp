@@ -1,11 +1,11 @@
 #include <iostream>
 
 #include "Director.h"
-#include "EmptyPlanBuilder.h"
+#include "ThreeRoomsApartment.h"
 
 void main() {
     Director director;
-    PlanBuilder* builder = new EmptyPlanBuilder();
+    PlanBuilder* builder = new ThreeRoomsApartment();
     director.Construct(builder);
     builder->Draw();
 }
