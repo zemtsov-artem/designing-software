@@ -8,5 +8,6 @@ class Director {
 		builder->BuildWalls();
 		builder->BuildDoors();
 		builder->BuildWindows();
+		builder->BuildPillar();
 	}
 };

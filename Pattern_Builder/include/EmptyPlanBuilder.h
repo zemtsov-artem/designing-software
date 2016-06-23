@@ -17,5 +17,6 @@ class EmptyPlanBuilder : public PlanBuilder {
 	}
 
 	virtual void BuildDoors() {}
+	virtual void BuildPillar() {}
 	virtual void BuildWindows() {}
 };

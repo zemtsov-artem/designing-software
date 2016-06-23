@@ -7,8 +7,15 @@ using std::endl;
 
 class Point {
  public:
+ 	Point(int x=0,int y=0) {
+ 		X=x;
+ 		Y=y;
+ 	}
 	int X;
-	int Y;			
+	int Y;
+	virtual void Draw() {
+		cout << "Point " << X <<" : "<<Y<<endl;
+	}		
 };
 
 /*------------------------------------------------*/
@@ -60,5 +67,14 @@ class Window: public Line {
 			Line(fromX,  fromY,  toX,  toY) {}
 
 	void Draw() { cout << "Window "; Line::Draw(); }
+};
+
+/*------------------------------------------------*/
+
+class Pillar: public Point {
+ public: 
+	Pillar(int _X, int _Y):Point(_X,_Y) {}
+
+	void Draw() { cout << "Pillar "; Point::Draw(); }
 };
 
